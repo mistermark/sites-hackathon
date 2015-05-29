@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
 </head>
 <body>
   <!--[if lt IE 10]>
@@ -37,37 +40,49 @@
 
   <section class="tiled">
     <div class="container">
-      <div class="row" id="hero"></div>
+      <div class="row" id="hero">
+        {{> hero}}
+      </div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="eta"></div>
+      <div class="row" id="eta">
+        {{> eta}}
+      </div>
     </div>
   </section>
 
   <section class="grayed">
     <div class="container">
-      <div class="row" id="description"></div>
+      <div class="row" id="description">
+        {{> description}}
+      </div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="attendance"></div>
+      <div class="row" id="attendance">
+        {{> attendance}}
+      </div>
     </div>
   </section>
 
   <section class="grayed">
     <div class="container">
-      <div class="row" id="judgment"></div>
+      <div class="row" id="judgment">
+        {{> judgment}}
+      </div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="prizes"></div>
+      <div class="row" id="prizes">
+        {{> prizes}}
+      </div>
     </div>
   </section>
 
@@ -76,27 +91,42 @@
       <div class="row" id="agenda-title">
         <h2>Agenda</h2>
       </div>
-      <div class="row" id="agenda"></div>
+      <div class="row" id="agenda">
+        {{> agenda}}
+      </div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="goals"></div>
+      <div class="row" id="goals">
+        {{> goals}}
+      </div>
     </div>
   </section>
 
   <section class="grayed">
     <div class="container">
-      <div class="row" id="inspiration"></div>
+      <div class="row" id="inspiration">
+        {{> inspiration}}
+      </div>
     </div>
   </section>
 
+  <section class="whited">
+    <div class="container">
+      <div class="row" id="apis">
+        {{> apis}}
+      </div>
+    </div>
+  </section>
 
   <section class="tiled">
     <div class="container">
       <div class="row">
-        <div class="col-md-6" id="apply"></div>
+        <div class="col-md-6" id="apply">
+          {{> apply}}
+        </div>
         <div class="col-md-6">
           <div class="signup-teams cognito">
             <script src="https://services.cognitoforms.com/include/required"></script>
@@ -110,13 +140,17 @@
 
   <section class="grayed">
     <div class="container">
-        <div id="survey"></div>
+        <div id="survey">
+          {{> survey}}
+        </div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div id="sponsors"></div>
+      <div id="sponsors">
+        {{> sponsors}}
+      </div>
     </div>
   </section>
 
@@ -139,46 +173,22 @@
     <div class="container">
       <div class="row footer">
         <div class="col-md-6">
-          <span id="credit"></span>
+          <span id="credit">
+            {{> credit}}
+          </span>
         </div>
         <div class="col-md-6">
-          <span id="social" class="pull-right"></span>
+          <span id="social" class="pull-right">
+            {{> social}}
+          </span>
         </div>
       </div>
     </div>
   </section>
 
-  <div id="rules"></div>
-
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/handlebars/handlebars.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:js scripts/plugins.js -->
-  <!-- endbuild -->
-
-  <!-- build:js templates/templates.js -->
-  <script src="templates/agenda-tmpl.js"></script>
-  <script src="templates/apply-tmpl.js"></script>
-  <script src="templates/attendance-tmpl.js"></script>
-  <script src="templates/credit-tmpl.js"></script>
-  <script src="templates/goals-tmpl.js"></script>
-  <script src="templates/description-tmpl.js"></script>
-  <script src="templates/hero-tmpl.js"></script>
-  <script src="templates/inspiration-tmpl.js"></script>
-  <script src="templates/judgment-tmpl.js"></script>
-  <script src="templates/prizes-tmpl.js"></script>
-  <script src="templates/social-tmpl.js"></script>
-  <script src="templates/sponsors-tmpl.js"></script>
-  <script src="templates/survey-tmpl.js"></script>
-  <script src="templates/eta-tmpl.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <!-- endbuild -->
+  <div id="rules">
+    {{> rules}}
+  </div>
 
 </body>
 </html>

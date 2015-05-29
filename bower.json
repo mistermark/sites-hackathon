@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "fontawesome": "~4.3.0",
-    "handlebars": "~3.0.0",
     "bootstrap-css-only": "~3.3.4"
   }
 }

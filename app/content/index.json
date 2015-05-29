@@ -3,7 +3,8 @@
     "h1": "Hack the system & win awesome prizes!",
     "p": "Welcome to the 2015 Backbase Hackathon in Amsterdam and online, a two-day chance to network, learn and share knowledge with your peers next <b>19th and 20th of June 2015.</b>",
     "imgSrc": "images/bg-blurred-code.png",
-    "imgAlt": "Apply now!"
+    "imgAlt": "Apply now!",
+    "link": "Early bird registration until <b>1st of June</b>"
   },
   "eta": {
     "p": "Time left until the hackathon to organize:"
@@ -40,7 +41,7 @@
         "title": "Free mode (you perform all the magic, with basic help if required)",
         "rules": [
           "We will deliver a set of APIs so people can hack on top of them",
-          "We offer our <a href=\"https://backbase.atlassian.net/wiki/pages/viewpage.action?spaceKey=BRZDMO&title=Backbase+Demo+Archetype+How+To\" target=\"_blank\">Breeze API</a> (the one you already know)",
+          "We offer our <a href=\"https://backbase.atlassian.net/wiki/pages/viewpage.action?spaceKey=BRZDMO&title=Backbase+Demo+Archetype+How+To\" target=\"_blank\">Breeze API</a> (the pre-made full model you already know )",
           "Standalone model, too (no APIs and no products – just frameworks, libraries, coffee and pizza)."
         ]
       },
@@ -65,80 +66,83 @@
     "final_p": "There are so many more things you can probably think of. Just be creative, and leave the provision of food and timekeeping to us (because that’s what we’re good at)."
   },
   "agenda": {
-    "day1": {
-      "date": {
-        "title": "Day 1",
-        "day": 19,
-        "month": "Jun",
-        "year": "2015",
-        "sup": "th"
+    "days": [
+      {
+        "date": {
+          "title": "Day 1",
+          "day": 19,
+          "month": "Jun",
+          "year": "2015",
+          "sup": "th"
+        },
+        "events": [
+          {
+            "time": "09:00",
+            "name": "Welcome Kick-off"
+          },
+          {
+            "time": "10:00",
+            "name": "START"
+          },
+          {
+            "time": "13:00",
+            "name": "Lunch"
+          },
+          {
+            "time": "17:00",
+            "name": "Drinks"
+          },
+          {
+            "time": "18:00",
+            "name": "Dinner"
+          }
+        ]
       },
-      "events": [
-        {
-          "time": "09:00",
-          "name": "Welcome Kick-off"
+      {
+        "date": {
+          "title": "Day 2",
+          "day": 20,
+          "month": "Jun",
+          "year": "2015",
+          "sup": "th"
         },
-        {
-          "time": "10:00",
-          "name": "START"
-        },
-        {
-          "time": "13:00",
-          "name": "Lunch"
-        },
-        {
-          "time": "17:00",
-          "name": "Drinks"
-        },
-        {
-          "time": "18:00",
-          "name": "Dinner"
-        }
-      ]
-    },
-    "day2": {
-      "date": {
-        "title": "Day 2",
-        "day": 20,
-        "month": "Jun",
-        "year": "2015",
-        "sup": "th"
-      },
-      "events": [
-        {
-          "time": "09:00",
-          "name": "Breakfast"
-        },
-        {
-          "time": "12:00",
-          "name": "Lunch"
-        },
-        {
-          "time": "13:00",
-          "name": "Jury"
-        },
-        {
-          "time": "15:00",
-          "name": "Finals"
-        },
-        {
-          "time": "16:00",
-          "name": "Awards"
-        },
-        {
-          "time": "17:00",
-          "name": "Drinks"
-        },
-        {
-          "time": "20:00",
-          "name": "Closing"
-        }
-      ]
-    }
+        "events": [
+          {
+            "time": "09:00",
+            "name": "Breakfast"
+          },
+          {
+            "time": "12:00",
+            "name": "Lunch"
+          },
+          {
+            "time": "13:00",
+            "name": "Jury"
+          },
+          {
+            "time": "15:00",
+            "name": "Finals"
+          },
+          {
+            "time": "16:00",
+            "name": "Awards"
+          },
+          {
+            "time": "17:00",
+            "name": "Drinks"
+          },
+          {
+            "time": "20:00",
+            "name": "Closing"
+          }
+        ]
+      }
+    ]
   },
   "apply": {
     "h3": "Join us on this 2-day hackathon in Amsterdam!",
-    "p": "The inaugural Backbase Hackathon invites you to apply today. Don’t waste time! Get this form filled in as soon as possible! The aim is to compete, so we can innovate together and move digital banking forwards. Here are some simple rules to abide by:</p><ol><li><b>Fresh hacking</b> - This means you must present a brand new product or feature that didn’t exist before. Your hack must be crafted entirely during the hackathon.</li><li><b>Work from a Backbase location</b> – You can join the Hackathon remotely from any Backbase location. Please bring your own laptop.</li><li><b>Sign up as a team</b>– A team can consist of 1-5 members, and can comprise a mix of talents. For instance, a team could include a coder, a user experience expert, or an entrepreneur – any flavor will do.</li></ol><p>At the end of the Hackathon, each team leader will present a 15-minute prototype demo to a jury of Backbase managers, as well as representatives of the Hackathon sponsor company.</p>"
+    "p": "The inaugural Backbase Hackathon invites you to apply today. Don’t waste time! Get this form filled in as soon as possible! The aim is to compete, so we can innovate together and move digital banking forwards. Here are some simple rules to abide by:</p><ol><li><b>Fresh hacking</b> - This means you must present a brand new product or feature that didn’t exist before. Your hack must be crafted entirely during the hackathon.</li><li><b>Work from a Backbase location</b> – You can join the Hackathon remotely from any Backbase location. Please bring your own laptop.</li><li><b>Sign up as a team</b>– A team can consist of 1-5 members, and can comprise a mix of talents. For instance, a team could include a coder, a user experience expert, or an entrepreneur – any flavor will do.</li></ol><p>At the end of the Hackathon, each team leader will present a 15-minute prototype demo to a jury of Backbase managers, as well as representatives of the Hackathon sponsor company.</p>",
+    "countdown": "Still <b><span id='countdown'></span></b> left to happen!"
   },
   "survey": {
     "h3": "Still doubting? Find more filling out our <a href='https://docs.google.com/forms/d/1bpRZKS20RHQY_mIq6lzaBrUvs6Q2u5e0LJuWX4SWxEs/viewform' target='_blank'>survey</a>"
@@ -173,51 +177,55 @@
 
     ]
   },
-  "credit": "© 2015 Backbase. All rights reserved.",
-  "social": [
-    {
-      "href": "http://www.facebook.com/pages/Backbase/352288013495",
-      "title": "Facebook",
-      "faClass": "fa fa-facebook"
-    },
-    {
-      "href": "http://twitter.com/backbase",
-      "title": "Twitter",
-      "faClass": "fa fa-twitter"
-    },
-    {
-      "href": "http://www.linkedin.com/company/backbase",
-      "title": "LinkedIn",
-      "faClass": "fa fa-linkedin"
-    },
-    {
-      "href": "http://www.youtube.com/backbase",
-      "title": "Youtube",
-      "faClass": "fa fa-youtube"
-    }
-  ],
+  "credit": {
+    "p": "© 2015 Backbase. All rights reserved."
+  },
+  "social": {
+    "networks": [
+      {
+        "href": "http://www.facebook.com/backbase",
+        "title": "Facebook",
+        "faClass": "fa fa-facebook"
+      },
+      {
+        "href": "http://twitter.com/backbase",
+        "title": "Twitter",
+        "faClass": "fa fa-twitter"
+      },
+      {
+        "href": "http://www.linkedin.com/company/backbase",
+        "title": "LinkedIn",
+        "faClass": "fa fa-linkedin"
+      },
+      {
+        "href": "http://www.youtube.com/backbase",
+        "title": "Youtube",
+        "faClass": "fa fa-youtube"
+      }
+    ]
+  },
   "judgment": {
     "h2": "Judgment Criteria",
     "criteria": [
       {
         "title": "WOW Factor (25%)",
         "description": "Does your product make the judges go 'WOW!'?",
-        "icon": "glyphicon glyphicon-plus"
+        "icon": "fa fa-4x fa-diamond"
       },
       {
         "title": "Impact (25%)",
         "description": "Does it solve a real problem for millions of people?",
-        "icon": "glyphicon glyphicon-plus"
+        "icon": "fa fa-4x fa-bomb"
       },
       {
         "title": "Innovation (25%)",
         "description": "Is it completely new to the market?",
-        "icon": "glyphicon glyphicon-plus"
+        "icon": "fa fa-4x fa-line-chart"
       },
       {
         "title": "Feasibility (25%)",
         "description": "Could it be productized easily?",
-        "icon": "glyphicon glyphicon-plus"
+        "icon": "fa fa-4x fa-cog"
       }
     ]
   },
@@ -252,9 +260,33 @@
       },
       {
         "title": "Bank 10.0",
-        "description": "Vizualize how the Bank of The Future would look like and create a Launchpad Theme to make it real. <a href=\"http://bbfab.s3-website-us-east-1.amazonaws.com/\">Inspiration?</a>"
+        "description": "Visualize how the Bank of The Future would look like and create a Launchpad Theme to make it real. <a href=\"http://bbfab.s3-website-us-east-1.amazonaws.com/\" target=\"_blank\">Inspiration?</a>"
       }
     ],
     "footer": "<span style=\"text-align: center\">... and many more!</span>"
+  },
+  "apis": {
+    "h2": "APIs you might want to use",
+    "subtitle": "A micro-startup ecosystem is created per team in the 1st Backbase Hackathon. In order to support the needs of this small businesses we provide a versatile base for allowing integrations with your favorite frameworks and tools.",
+    "ideas": [
+      {
+        "title": "<a href=\"https://www.openbankproject.com/for-developers/\" target=\"_blank\">Open Bank Project</a>",
+        "description": "Want to develop a financial application which accesses bank account transactions? The Open Bank Project offers an easy-to-use RESTful JSON API. Connect in minutes and start using it. <a href=\"https://apisandbox.openbankproject.com/obp/v1.0/banks\">Here</a> you can access their sandbox!"
+      },
+      {
+        "title": "<a href=\"https://www.enclout.com/\" target=\"_blank\">EnClout</a>",
+        "description": "Give a list of stock symbols, this API returns stock data using Yahoo Finance!"
+      },
+      {
+        "title": "<a href=\"http://www.xignite.com/\" target=\"_blank\">xignite</a>",
+        "description": "Xinite empowers the future of finance with a large set of financial market data API right in the cloud as real time quotes, extended loans and wide etcetera. Check an <a href=\"http://www.xignite.com/product/real-time-stock-quotes-data/api/GetRealQuotes/\" target=\"_blank\">example on how to get real quotes</a>."
+      },
+      {
+        "title": "<a href=\"http://catalog.data.gov/\" target=\"_blank\">Data.gov (opendata)</a>",
+        "description": "The home of the U.S. Government’s open data. Here you will find data, tools, and resources to conduct research, develop web and mobile applications, design data visualizations, and more. Explore hundreds of free data sets on financial services, including banking, lending, retirement, investments, and insurance. Start using these data sets to build new financial products and services, such as apps that help financial consumers and new models to help make loans to small businesses."
+      }
+    ],
+    "footer": "<p style=\"text-align: center\">Still not satisfied? Not a problem! It's always easy to scrape the data you need! Just <a href=\"mailto:hackatho+apiproposal@backbase.com\" target=\"_blank\">drop us your ideas or any question</a>. We'll be glad to cook together with you!</p> "
   }
+
 }
