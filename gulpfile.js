@@ -48,7 +48,7 @@ gulp.task('images', function () {
 });
 
 
-gulp.task('html', ['styles'], function () { //, 'templates'
+gulp.task('html', ['styles'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
@@ -121,7 +121,7 @@ gulp.task('wiredep', function () {
 
 
 /**
- * TEST: Compile HBS to HTML
+ * Compile HBS to HTML
  */
 gulp.task('compile', function() {
   var options = {
@@ -145,7 +145,7 @@ gulp.task('compile', function() {
 });
 
 
-gulp.task('build', ['jshint', 'html', 'compile', 'images', 'extras'], function () {
+gulp.task('build', ['clean','jshint', 'html', 'compile', 'images', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
