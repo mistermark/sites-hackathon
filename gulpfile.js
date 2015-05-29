@@ -108,7 +108,7 @@ gulp.task('compile', function() {
 });
 
 
-gulp.task('html', function() {
+gulp.task('html', ['styles', 'js', 'images', 'compile'], function() {
   var assets = $.useref.assets({
     searchPath: ['.tmp']
   });
@@ -195,19 +195,20 @@ gulp.task('wiredep', function() {
 });
 
 
-gulp.task('build', ['styles', 'compile', 'js', 'images', 'html', 'extras'], function() {
+gulp.task('build', ['html', 'extras'], function() {
   return gulp.src('dist/**/*').pipe($.size({
     title: 'build',
     gzip: true
   }));
 });
 
-gulp.task('deploy', function() { //, ['build']
+gulp.task('deploy', ['build'], function() { //, ['build']
   return gulp.src('dist')
     .pipe($.subtree({
       message: 'Site updated at ' + new Date(),
       branch: 'gh-pages'
-    }));
+    }))
+    .pipe($.clean());
 });
 
 gulp.task('default', ['clean'], function() {
