@@ -1,18 +1,16 @@
-/* global Handlebars */
-
 (function(){
 
   'use strict';
 
   // Spit HTML coming from contents.json
-  Handlebars.registerHelper('strip-scripts', function(context) {
-    return new Handlebars.SafeString(context);
-  });
+  // Handlebars.registerHelper('strip-scripts', function(context) {
+  //   return new Handlebars.SafeString(context);
+  // });
 
   // Countdown
-  function timeLeft(target_date) {
-    var current_date = new Date().getTime(),
-        seconds_left = (target_date - current_date) / 1000,
+  function timeLeft(targetDate) {
+    var currentDate = new Date().getTime(),
+        secondsLeft = (targetDate - currentDate) / 1000,
         result = {
           days: 0,
           hours: 0,
@@ -20,12 +18,12 @@
           seconds: 0
         };
 
-    result.days = parseInt(seconds_left / 86400);
-    seconds_left = seconds_left % 86400;
-    result.hours = parseInt(seconds_left / 3600);
-    seconds_left = seconds_left % 3600;
-    result.minutes = parseInt(seconds_left / 60);
-    result.seconds = parseInt(seconds_left % 60);
+    result.days = parseInt(secondsLeft / 86400);
+    secondsLeft = secondsLeft % 86400;
+    result.hours = parseInt(secondsLeft / 3600);
+    secondsLeft = secondsLeft % 3600;
+    result.minutes = parseInt(secondsLeft / 60);
+    result.seconds = parseInt(secondsLeft % 60);
 
     return result;
   }
@@ -45,23 +43,23 @@
   }
 
   // Main
-  _loadJSON('content.json', function (sections) {
-    document.addEventListener("DOMContentLoaded", function() {
-      Object.keys(sections).forEach(function(section){
-        var tmpl = MyApp.templates[section + '-tmpl'];
-        if (tmpl) {
-          document.getElementById(section).innerHTML = tmpl(sections[section]);
-        }
-
+  _loadJSON('content/index.json', function (sections) {
+    document.addEventListener('DOMContentLoaded', function() {
+  //     Object.keys(sections).forEach(function(section){
+  //       var tmpl = MyApp.templates[section + '-tmpl'];
+  //       if (tmpl) {
+  //         document.getElementById(section).innerHTML = tmpl(sections[section]);
+  //       }
+  //
         // Timer
-        var startDate = sections.agenda.day1.date;
-        var target_date = new Date(startDate.month + ', ' + startDate.day + ', ' + startDate.year).getTime();
+        var startDate = sections.agenda.days[0].date;
+        var targetDate = new Date(startDate.month + ', ' + startDate.day + ', ' + startDate.year).getTime();
         var countdownTimer = document.getElementById('countdown-clock');
         var countdownCounter = document.getElementById('countdown');
 
         if (countdownCounter && countdownTimer) {
           setInterval(function () {
-            var tl = timeLeft(target_date);
+            var tl = timeLeft(targetDate);
             countdownCounter.innerHTML = tl.days +  ' days ' +
               tl.hours + ' hours ' +
               tl.minutes + ' minutes and ' +
@@ -71,10 +69,10 @@
               '<span>' + tl.minutes + ' minutes</span>' +
               '<span>' + tl.seconds + ' seconds</span>';
           }, 500);
-        };
-      });
-
-      document.getElementsByTagName("body")[0].style.display=null;
+        }
+      // });
+  //
+  //     document.getElementsByTagName("body")[0].style.display=null;
     });
   });
 })();

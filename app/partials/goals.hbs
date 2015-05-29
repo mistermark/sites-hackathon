@@ -1,0 +1,14 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+  <h2>{{html goals.h2}}</h2>
+  <p>{{html goals.p}}</p>
+  {{#each goals.goals}}
+      <h4>{{html title}}</h4>
+      <ol>
+          {{#each rules}}
+             <li>{{html this}}</li>
+          {{/each}}
+      </ol>
+  {{/each}}
+</div>
+<div class="col-md-2"></div>

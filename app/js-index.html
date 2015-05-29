@@ -20,7 +20,7 @@
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
-  <!-- <script src="/bower_components/handlebars/handlebars.js"></script> -->
+  <script src="/bower_components/handlebars/handlebars.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -28,7 +28,7 @@
   <!-- endbuild -->
 
   <!-- build:js templates/templates.js -->
-  <!-- <script src="templates/agenda-tmpl.js"></script>
+  <script src="templates/agenda-tmpl.js"></script>
   <script src="templates/apis-tmpl.js"></script>
   <script src="templates/apply-tmpl.js"></script>
   <script src="templates/attendance-tmpl.js"></script>
@@ -42,14 +42,14 @@
   <script src="templates/prizes-tmpl.js"></script>
   <script src="templates/social-tmpl.js"></script>
   <script src="templates/sponsors-tmpl.js"></script>
-  <script src="templates/survey-tmpl.js"></script> -->
+  <script src="templates/survey-tmpl.js"></script>
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </head>
-<body>
+<body style="display: none;">
   <!--[if lt IE 10]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -67,49 +67,37 @@
 
   <section class="tiled">
     <div class="container">
-      <div class="row" id="hero">
-        {{> hero}}
-      </div>
+      <div class="row" id="hero"></div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="eta">
-        {{> eta}}
-      </div>
+      <div class="row" id="eta"></div>
     </div>
   </section>
 
   <section class="grayed">
     <div class="container">
-      <div class="row" id="description">
-        {{> description}}
-      </div>
+      <div class="row" id="description"></div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="attendance">
-        {{> attendance}}
-      </div>
+      <div class="row" id="attendance"></div>
     </div>
   </section>
 
   <section class="grayed">
     <div class="container">
-      <div class="row" id="judgment">
-        {{> judgment}}
-      </div>
+      <div class="row" id="judgment"></div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="prizes">
-        {{> prizes}}
-      </div>
+      <div class="row" id="prizes"></div>
     </div>
   </section>
 
@@ -118,42 +106,32 @@
       <div class="row" id="agenda-title">
         <h2>Agenda</h2>
       </div>
-      <div class="row" id="agenda">
-        {{> agenda}}
-      </div>
+      <div class="row" id="agenda"></div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="goals">
-        {{> goals}}
-      </div>
+      <div class="row" id="goals"></div>
     </div>
   </section>
 
   <section class="grayed">
     <div class="container">
-      <div class="row" id="inspiration">
-        {{> inspiration}}
-      </div>
+      <div class="row" id="inspiration"></div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div class="row" id="apis">
-        {{> apis}}
-      </div>
+      <div class="row" id="apis"></div>
     </div>
   </section>
 
   <section class="tiled">
     <div class="container">
       <div class="row">
-        <div class="col-md-6" id="apply">
-          {{> apply}}
-        </div>
+        <div class="col-md-6" id="apply"></div>
         <div class="col-md-6">
           <div class="signup-teams cognito">
             <script src="https://services.cognitoforms.com/include/required"></script>
@@ -167,17 +145,13 @@
 
   <section class="grayed">
     <div class="container">
-        <div id="survey">
-          {{> survey}}
-        </div>
+        <div id="survey"></div>
     </div>
   </section>
 
   <section class="whited">
     <div class="container">
-      <div id="sponsors">
-        {{> sponsors}}
-      </div>
+      <div id="sponsors"></div>
     </div>
   </section>
 
@@ -200,22 +174,15 @@
     <div class="container">
       <div class="row footer">
         <div class="col-md-6">
-          <span id="credit">
-            {{> credit}}
-          </span>
+          <span id="credit"></span>
         </div>
         <div class="col-md-6">
-          <span id="social" class="pull-right">
-            {{> social}}
-          </span>
+          <span id="social" class="pull-right"></span>
         </div>
       </div>
     </div>
   </section>
 
-  <div id="rules">
-    {{> rules}}
-  </div>
-
+  <div id="rules"></div>
 </body>
 </html>

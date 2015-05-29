@@ -1,0 +1,10 @@
+<div class="row">
+  <h2>{{sponsors.h2}}</h2>
+</div>
+<div class="row sponsor-images">
+{{#each sponsors.brands}}
+    <a href="{{href}}" target="_blank">
+        <img src="{{imgSrc}}" alt="{{imgAlt}}"/>
+    </a>
+{{/each}}
+</div>

@@ -2,6 +2,10 @@
 'use strict';
 
 var gulp = require('gulp');
+var hbs = require('gulp-compile-handlebars');
+var rename = require('gulp-rename');
+var path = require('path');
+var data = require('gulp-data');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -23,36 +27,11 @@ gulp.task('styles', function () {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('jshint', ['templates'], function () {
+gulp.task('jshint', ['compile'], function () {
   return gulp.src('app/scripts/**/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'));
-});
-
-
-gulp.task('templates', function () {
-  return gulp.src('app/templates/**/*.hbs')
-    .pipe($.handlebars())
-    .pipe($.defineModule('plain'))
-    .pipe($.declare({
-      namespace: 'MyApp.templates' // change this to whatever you want
-    }))
-    .pipe(gulp.dest('.tmp/templates'));
-});
-
-gulp.task('html', ['styles', 'templates'], function () {
-  var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
-
-  return gulp.src('app/*.html')
-    .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.csso()))
-    .pipe(assets.restore())
-    .pipe($.useref())
-    .pipe($.ga({ tag: 'body', url: 'hackathon.backbase.com', uid: 'UA-332005-15'}))
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
-    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function () {
@@ -67,6 +46,30 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
+// gulp.task('templates', function () {
+//   return gulp.src('app/templates/**/*.hbs')
+//     .pipe($.handlebars())
+//     .pipe($.defineModule('plain'))
+//     .pipe($.declare({
+//       namespace: 'MyApp.templates' // change this to whatever you want
+//     }))
+//     .pipe(gulp.dest('.tmp/templates'));
+// });
+
+gulp.task('html', ['styles'], function () { //, 'templates'
+  var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
+
+  return gulp.src('app/*.html')
+    .pipe(assets)
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.csso()))
+    .pipe(assets.restore())
+    .pipe($.useref())
+    .pipe($.ga({ tag: 'body', url: 'hackathon.backbase.com', uid: 'UA-332005-15'}))
+    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('extras', function () {
   return gulp.src(['app/*.*', '!app/*.html', 'app/CNAME'], {
     dot: true
@@ -75,7 +78,7 @@ gulp.task('extras', function () {
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['templates', 'styles'], function () {
+gulp.task('serve', ['compile', 'styles'], function () {
   browserSync({
     notify: false,
     port: 9000,
@@ -92,11 +95,13 @@ gulp.task('serve', ['templates', 'styles'], function () {
     'app/*.html',
     'app/scripts/**/*.js',
     'app/images/**/*',
-    '.tmp/templates/**/*.js'
+    'app/partials/**/*.hbs'
+    // '.tmp/templates/**/*.js'
   ]).on('change', reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/templates/**/*.hbs', ['templates', reload]);
+  //gulp.watch('app/templates/**/*.hbs', ['templates', reload]);
+  gulp.watch('app/partials/**/*.hbs', ['compile', reload]);
   gulp.watch('bower.json', ['wiredep']);
 });
 
@@ -118,14 +123,40 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'html', 'templates', 'images', 'extras'], function () {
+
+/**
+ * TEST: Compile HBS to HTML
+ */
+gulp.task('compile', function() {
+  var options = {
+    ignorePartials: true,
+    batch: ['./app/partials'],
+    helpers: {
+      html: function(string) {
+        return new hbs.Handlebars.SafeString(string);
+      }
+    }
+  };
+
+  return gulp.src('./app/index.html')
+      .pipe(data(function(file) {
+          var filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
+          return require('./app/content/'+ filename +'.json');
+        }))
+      .pipe(hbs(data, options))
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest('./.tmp'));
+});
+
+
+gulp.task('build', ['jshint', 'html', 'compile', 'images', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('deploy', ['build'], function () {
   return gulp.src('dist')
     .pipe($.subtree({message: 'Site updated at ' + new Date()}))
-    .pipe($.clean())
+    .pipe($.clean());
 });
 
 gulp.task('default', ['clean'], function () {
