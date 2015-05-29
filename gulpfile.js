@@ -47,15 +47,6 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
-// gulp.task('templates', function () {
-//   return gulp.src('app/templates/**/*.hbs')
-//     .pipe($.handlebars())
-//     .pipe($.defineModule('plain'))
-//     .pipe($.declare({
-//       namespace: 'MyApp.templates' // change this to whatever you want
-//     }))
-//     .pipe(gulp.dest('.tmp/templates'));
-// });
 
 gulp.task('html', ['styles'], function () { //, 'templates'
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
@@ -70,6 +61,7 @@ gulp.task('html', ['styles'], function () { //, 'templates'
     .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
+
 
 gulp.task('extras', function () {
   return merge(gulp.src(['app/*.*', '!app/*.html', 'app/CNAME'], {
@@ -159,8 +151,7 @@ gulp.task('build', ['jshint', 'html', 'compile', 'images', 'extras'], function (
 
 gulp.task('deploy', ['build'], function () {
   return gulp.src('dist')
-    .pipe($.subtree({message: 'Site updated at ' + new Date()}))
-    .pipe($.clean());
+    .pipe($.subtree({message: 'Site updated at ' + new Date()}));
 });
 
 gulp.task('default', ['clean'], function () {
