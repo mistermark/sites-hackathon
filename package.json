@@ -7,7 +7,7 @@
     "autoprefixer-core": "^4.0.2",
     "browser-sync": "^1.8.2",
     "del": "^1.1.1",
-    "gulp": "^3.6.0",
+    "gulp": "^3.8.11",
     "gulp-cache": "^0.2.2",
     "gulp-clean": "^0.3.1",
     "gulp-compile-handlebars": "^0.5.0",
@@ -30,6 +30,7 @@
     "gulp-useref": "^1.0.2",
     "jshint-stylish": "^1.0.0",
     "main-bower-files": "^2.5.0",
+    "merge-stream": "^0.1.7",
     "opn": "^1.0.0",
     "wiredep": "^2.0.0"
   },

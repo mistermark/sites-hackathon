@@ -8,6 +8,7 @@ var path = require('path');
 var data = require('gulp-data');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
+var merge = require('merge-stream');
 var reload = browserSync.reload;
 
 gulp.task('styles', function () {
@@ -71,9 +72,12 @@ gulp.task('html', ['styles'], function () { //, 'templates'
 });
 
 gulp.task('extras', function () {
-  return gulp.src(['app/*.*', '!app/*.html', 'app/CNAME'], {
+  return merge(gulp.src(['app/*.*', '!app/*.html', 'app/CNAME'], {
     dot: true
-  }).pipe(gulp.dest('dist'));
+  }).pipe(gulp.dest('dist')),
+    gulp.src(['bower_components/fontawesome/fonts/*.*'], {
+      dot: true
+    }).pipe(gulp.dest('dist/fonts')));
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
