@@ -11,8 +11,11 @@ var browserSync = require('browser-sync');
 var merge = require('merge-stream');
 var reload = browserSync.reload;
 
+/**
+ * Compiling Styles
+ */
 gulp.task('styles', function() {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('./app/styles/main.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
@@ -32,7 +35,12 @@ gulp.task('styles', function() {
     }));
 });
 
-gulp.task('jshint', ['compile'], function() {
+
+/**
+ * JSHint on Javascript
+ */
+
+gulp.task('jshint', function() {
   return gulp.src('app/scripts/**/*.js')
     .pipe(reload({
       stream: true,
@@ -41,6 +49,24 @@ gulp.task('jshint', ['compile'], function() {
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'));
 });
+
+
+/**
+ * Javascript compiling/minifying
+ */
+
+gulp.task('js', ['jshint'], function() {
+
+  return gulp.src('./app/**/*.js')
+    .pipe($.uglify())
+    .pipe(gulp.dest('./.tmp'));
+
+});
+
+
+/**
+ * Minifying images to temp dir
+ */
 
 gulp.task('images', function() {
   return gulp.src('app/images/**/*')
@@ -53,11 +79,36 @@ gulp.task('images', function() {
         cleanupIDs: false
       }]
     })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('./dist/images'));
 });
 
 
-gulp.task('html', ['styles'], function() { //, 'templates'
+/**
+ * Compile HBS to HTML
+ */
+gulp.task('compile', function() {
+  var options = {
+    ignorePartials: true,
+    batch: ['./app/partials'],
+    helpers: {
+      html: function(string) {
+        return new hbs.Handlebars.SafeString(string);
+      }
+    }
+  };
+
+  return gulp.src('./app/index.html')
+    .pipe(data(function(file) {
+      var filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
+      return require('./app/content/' + filename + '.json');
+    }))
+    .pipe(hbs(data, options))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('./.tmp'));
+});
+
+
+gulp.task('html', function() {
   var assets = $.useref.assets({
     searchPath: ['.tmp']
   });
@@ -77,7 +128,8 @@ gulp.task('html', ['styles'], function() { //, 'templates'
     //   conditionals: true,
     //   loose: true
     // })))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('./dist'));
+
 });
 
 
@@ -87,7 +139,10 @@ gulp.task('extras', function() {
     }).pipe(gulp.dest('dist')),
     gulp.src(['bower_components/fontawesome/fonts/*.*'], {
       dot: true
-    }).pipe(gulp.dest('dist/fonts')));
+    }).pipe(gulp.dest('dist/fonts')),
+    gulp.src(['app/content/**'], {
+      dot: true
+    }).pipe(gulp.dest('dist/content')));
 });
 
 
@@ -140,32 +195,7 @@ gulp.task('wiredep', function() {
 });
 
 
-/**
- * TEST: Compile HBS to HTML
- */
-gulp.task('compile', function() {
-  var options = {
-    ignorePartials: true,
-    batch: ['./app/partials'],
-    helpers: {
-      html: function(string) {
-        return new hbs.Handlebars.SafeString(string);
-      }
-    }
-  };
-
-  return gulp.src('./app/index.html')
-    .pipe(data(function(file) {
-      var filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
-      return require('./app/content/' + filename + '.json');
-    }))
-    .pipe(hbs(data, options))
-    .pipe(rename('index.html'))
-    .pipe(gulp.dest('./.tmp'));
-});
-
-
-gulp.task('build', ['jshint', 'html', 'images', 'extras'], function() {
+gulp.task('build', ['styles', 'compile', 'js', 'images', 'html', 'extras'], function() {
   return gulp.src('dist/**/*').pipe($.size({
     title: 'build',
     gzip: true
@@ -175,7 +205,8 @@ gulp.task('build', ['jshint', 'html', 'images', 'extras'], function() {
 gulp.task('deploy', function() { //, ['build']
   return gulp.src('dist')
     .pipe($.subtree({
-      message: 'Site updated at ' + new Date()
+      message: 'Site updated at ' + new Date(),
+      branch: 'gh-pages'
     }));
 });
 
