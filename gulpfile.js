@@ -96,14 +96,18 @@ gulp.task('compile', function() {
       }
     }
   };
+  var filename;
 
-  return gulp.src('./app/index.html')
+  return gulp.src('./app/*.html')
     .pipe(data(function(file) {
-      var filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
+      filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
       return require('./app/content/' + filename + '.json');
     }))
     .pipe(hbs(data, options))
-    .pipe(rename('index.html'))
+    .pipe(data(function(file) {
+      filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
+      return rename(filename + '.html');
+    }))
     .pipe(gulp.dest('./.tmp'));
 });
 
@@ -124,10 +128,10 @@ gulp.task('html', ['styles', 'js', 'images', 'compile'], function() {
       url: 'hackathon.backbase.com',
       uid: 'UA-332005-15'
     }))
-    // .pipe($.if('*.html', $.minifyHtml({
-    //   conditionals: true,
-    //   loose: true
-    // })))
+    .pipe($.if('*.html', $.minifyHtml({
+      conditionals: true,
+      loose: true
+    })))
     .pipe(gulp.dest('./dist'));
 
 });
