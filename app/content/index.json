@@ -42,7 +42,9 @@
         "rules": [
           "We will deliver a set of APIs so people can hack on top of them",
           "We offer our <a href=\"https://backbase.atlassian.net/wiki/pages/viewpage.action?spaceKey=BRZDMO&title=Backbase+Demo+Archetype+How+To\" target=\"_blank\">Breeze API</a> (the pre-made full model you already know )",
-          "Standalone model, too (no APIs and no products – just frameworks, libraries, coffee and pizza)."
+          "Standalone model, too (no APIs and no products – just frameworks, libraries, coffee and pizza).",
+          "URL to Breeze server: http://hackathon.backbase.dev:8080/portalserver/home",
+          "Documentation of Breeze API can be found here: URL"
         ]
       },
       {

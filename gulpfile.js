@@ -58,7 +58,6 @@ gulp.task('jshint', function() {
 gulp.task('js', ['jshint'], function() {
 
   return gulp.src('./app/**/*.js')
-    .pipe($.uglify())
     .pipe(gulp.dest('./.tmp'));
 
 });
@@ -98,7 +97,7 @@ gulp.task('compile', function() {
   };
   var filename;
 
-  return gulp.src('./app/*.html')
+  return gulp.src('./app/**/*.html')
     .pipe(data(function(file) {
       filename = path.basename(file.path).substr(0, path.basename(file.path).lastIndexOf('.'));
       return require('./app/content/' + filename + '.json');
@@ -167,15 +166,13 @@ gulp.task('serve', ['compile', 'styles'], function() {
 
   // watch for changes
   gulp.watch([
-    'app/*.html',
+    'app/**/*.html',
     'app/scripts/**/*.js',
     'app/images/**/*',
     'app/partials/**/*.hbs'
-    // '.tmp/templates/**/*.js'
   ]).on('change', reload);
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  //gulp.watch('app/templates/**/*.hbs', ['templates', reload]);
   gulp.watch('app/partials/**/*.hbs', ['compile', reload]);
   gulp.watch('bower.json', ['wiredep']);
 });

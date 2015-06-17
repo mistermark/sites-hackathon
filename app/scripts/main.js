@@ -42,37 +42,33 @@
     xobj.send(null);
   }
 
-  // Main
-  _loadJSON('content/index.json', function (sections) {
-    document.addEventListener('DOMContentLoaded', function() {
-  //     Object.keys(sections).forEach(function(section){
-  //       var tmpl = MyApp.templates[section + '-tmpl'];
-  //       if (tmpl) {
-  //         document.getElementById(section).innerHTML = tmpl(sections[section]);
-  //       }
-  //
-        // Timer
-        var startDate = sections.agenda.days[0].date;
-        var targetDate = new Date(startDate.month + ', ' + startDate.day + ', ' + startDate.year).getTime();
-        var countdownTimer = document.getElementById('countdown-clock');
-        var countdownCounter = document.getElementById('countdown');
+  function _setTimerHtml(obj, tl) {
+    obj.innerHTML = '<span>' + tl.days +  ' days</span>' +
+      '<span>' + tl.hours + ' hours</span>' +
+      '<span>' + tl.minutes + ' minutes</span>' +
+      '<span>' + tl.seconds + ' seconds</span>';
+  }
 
-        if (countdownCounter && countdownTimer) {
-          setInterval(function () {
-            var tl = timeLeft(targetDate);
-            countdownCounter.innerHTML = tl.days +  ' days ' +
-              tl.hours + ' hours ' +
-              tl.minutes + ' minutes and ' +
-              tl.seconds + ' seconds';
-            countdownTimer.innerHTML = '<span>' + tl.days +  ' days</span>' +
-              '<span>' + tl.hours + ' hours</span>' +
-              '<span>' + tl.minutes + ' minutes</span>' +
-              '<span>' + tl.seconds + ' seconds</span>';
-          }, 500);
-        }
-      // });
-  //
-  //     document.getElementsByTagName("body")[0].style.display=null;
-    });
+  // Main
+  document.addEventListener('DOMContentLoaded', function() {
+
+    if(document.getElementById('countdown-clock') || document.getElementById('countdown')) {
+      _loadJSON('/content/index.json', function (sections) {
+          // Timer
+          var startDate = sections.agenda.days[0].date;
+          var targetDate = new Date(startDate.month + ', ' + startDate.day + ', ' + startDate.year).getTime();
+          var countdownTimer = document.getElementById('countdown-clock');
+          var countdownCounter = document.getElementById('countdown');
+
+          var tl = timeLeft(targetDate);
+          if (countdownCounter) {
+            _setTimerHtml(countdownCounter, tl);
+          }
+          if (countdownTimer) {
+            _setTimerHtml(countdownTimer, tl);
+          }
+
+      });
+    }
   });
 })();
