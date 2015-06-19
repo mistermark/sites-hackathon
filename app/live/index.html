@@ -8,46 +8,17 @@
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div class="container" id="header">
-    <div class="row">
-      <div class="col-md-12">
-        <img src="/images/bb-hackathon-logo.png" alt="Backbase Hackathon"/>
-      </div>
-    </div>
+  <div class="wrapper">
+
+    <!-- <section class="whited"> -->
+      <!-- <div class="container"> -->
+        <div id="video-feed">
+          {{> video-feed}}
+        </div>
+      <!-- </div> -->
+    <!-- </section> -->
+
   </div>
-
-  <section class="tiled">
-    <div class="container">
-      <div class="row" id="video-title">
-        {{> videos-title}}
-      </div>
-    </div>
-  </section>
-
-  <section class="whited">
-    <div class="container">
-      <div class="row" id="video-feed">
-        {{> video-feed}}
-      </div>
-    </div>
-  </section>
-
-  <section class="blackened">
-    <div class="container">
-      <div class="row footer">
-        <div class="col-md-6">
-          <span id="credit">
-            {{> credit}}
-          </span>
-        </div>
-        <div class="col-md-6">
-          <span id="social" class="pull-right">
-            {{> social}}
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </body>
 </html>

@@ -1,7 +1,11 @@
 // General classes
 
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 body {
-  padding-top: 20px;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -66,4 +70,10 @@ section {
   &.btn-danger {
     background-color: $bb-red;
   }
+}
+
+.wrapper {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
 }

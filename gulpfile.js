@@ -55,7 +55,7 @@ gulp.task('jshint', function() {
  * Javascript compiling/minifying
  */
 
-gulp.task('js', ['jshint'], function() {
+gulp.task('js', function() {
 
   return gulp.src('./app/**/*.js')
     .pipe(gulp.dest('./.tmp'));
@@ -116,7 +116,7 @@ gulp.task('html', ['styles', 'js', 'images', 'compile'], function() {
     searchPath: ['.tmp']
   });
 
-  return gulp.src('./.tmp/*.html')
+  return gulp.src('./.tmp/**/*.html')
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))

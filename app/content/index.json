@@ -1,4 +1,7 @@
 {
+  "header": {
+    "siteurl": "http://hackathon.backbase.com"
+  },
   "hero": {
     "h1": "Hack the system & win awesome prizes!",
     "p": "Welcome to the 2015 Backbase Hackathon in Amsterdam and online, a two-day chance to network, learn and share knowledge with your peers next <b>19th and 20th of June 2015.</b>",

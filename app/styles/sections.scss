@@ -2,6 +2,7 @@
 
 #header {
   margin-bottom: 25px;
+  padding-top: 20px;
   .col-md-6:nth-child(1){
     text-align: left;
   }
@@ -205,6 +206,67 @@
         background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC9UlEQVRYhe2WX2hPYRzGn2M2jPk7XExssUQhS8yFRLlAJokLXHDhQho3/hVNolygtJIbIpT8aRe72MWoLXf+1TL/smlsa83masPFxMfFnl/eWefs99NczbdOnfd5n+f5ft/3Ped7jvQ/RnpEmQqAGZIWSSqWtEDSN0lNkt5IehVFUc+wVhgkXgXcArqIjxbgIrAgXd/YHQCmSRojabSkU5J2e6pX0hNJjZI+ScqSVCCpRNIyj3slXZB0UdJ4SX1RFH3OZLUVQCfQA3R7dV3ACaAoRhMBS4BLQF+wIz32Oplu8iMW9wHtvq8DijNYwGrgnbXtQUFHhhKWAd8t2AZMBrb7wcsogHlezCR79dm7LE5Q7K0COJZpwjQKOmbvzkG7CeQAD024A4z6BwWMsjfOlRNOlnuiGZgZY1AArAfyEpLkmVMQMz/DOQDKU+B0oAP4AWw2lu3zW+7K84AGC28mFHDLnAZggrXL7ZVtTplzdQDTBRy0qCYwWmGsCcj1w9hhrDahgAfmdFiTaw+A0oBXY+yAgNceVASE08YqA6wUOAwUJhRQZM6KAKu015kAqzDWKGCnB2+BuSbUGdsQlyzdADbaq87juc4FsEPAWKDWQAuwB2gDvg2x2mJgv6/YJgUU2qvN3i2powTGpkj5QBUD4z0wLsZ0qg1T0Q5MjeHm2iuMKiD/T2IWsDcgtwITY0xzgNuB4W3C93ogNw/4aF6zc8T3Ge/GMwvKE3g5wF3gXlxy8/bZ6/mgVSeINlnUDSxM4J0DzifMzwc+2WtLWsktjIBrFr7An2D635izwGJgLdAIvATWGDsL7DK3kKB5AZn9fdH/Fau3QROwDlgK3PfOtNHfL874vttzJeamGtAjYEpGyYMi8oFqG/0ErtPfJS8DVwLeVWMrgRvBw1md9rknFJH6LoT/gj38btOpdtsbzHcCh3D/H5YAZgPHgafAVyeqD47pC/AYOArMStf3b37LsyTN8bXV8H1JHyS1RlH0M1PP/zGy4xc7obmWf0P/AQAAAABJRU5ErkJggg==) no-repeat center;
       }
     }
+  }
+}
+
+#video-carousel {
+  display: none;
+  position: relative;
+
+  .video-item {
+    width: 100%;
+    height: 100%;
+    h3 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      margin: 0.4em 0 0;
+      padding: 0.4em;
+      background-color: $footer-bg-color;
+      color: #fff;
+      z-index: 100;
+    }
+    iframe {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  .slidesjs-pagination {
+    position: absolute;
+    left: 0;
+    bottom: 2.4em;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    z-index: 999;
+    padding: 1.6em 0 0;
+  }
+  .slidesjs-pagination-item {
+    display: inline-block;
+    margin: 0 1em;
+    a {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      text-indent: -9999px;
+
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .video-grid {
+
   }
 }
 

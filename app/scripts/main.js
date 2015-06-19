@@ -49,6 +49,17 @@
       '<span>' + tl.seconds + ' seconds</span>';
   }
 
+  function _getWindowSize(cb) {
+
+    $('#video-carousel').width(window.innerWidth);
+    $('#video-carousel').height(window.innerHeight);
+
+    if(cb) {
+      cb();
+    }
+
+  }
+
   // Main
   document.addEventListener('DOMContentLoaded', function() {
 
@@ -70,5 +81,27 @@
 
       });
     }
+
+    _getWindowSize(function() {
+      $('#video-carousel').slidesjs({
+        navigation: {
+          active: false
+        },
+        play: {
+          auto: true,
+          interval: 6400
+        },
+        effect: {
+          slide: {
+            speed: 2400
+          }
+        },
+        width: 960,
+        height: 540
+      });
+    });
+
+
+
   });
 })();
