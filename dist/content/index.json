@@ -1,4 +1,7 @@
 {
+  "header": {
+    "siteurl": "http://hackathon.backbase.com"
+  },
   "hero": {
     "h1": "Hack the system & win awesome prizes!",
     "p": "Welcome to the 2015 Backbase Hackathon in Amsterdam and online, a two-day chance to network, learn and share knowledge with your peers next <b>19th and 20th of June 2015.</b>",
@@ -42,7 +45,9 @@
         "rules": [
           "We will deliver a set of APIs so people can hack on top of them",
           "We offer our <a href=\"https://backbase.atlassian.net/wiki/pages/viewpage.action?spaceKey=BRZDMO&title=Backbase+Demo+Archetype+How+To\" target=\"_blank\">Breeze API</a> (the pre-made full model you already know )",
-          "Standalone model, too (no APIs and no products – just frameworks, libraries, coffee and pizza)."
+          "Standalone model, too (no APIs and no products – just frameworks, libraries, coffee and pizza).",
+          "URL to Breeze server: http://hackathon.backbase.dev:8080/portalserver/home",
+          "Documentation of Breeze API can be found here: URL"
         ]
       },
       {
@@ -117,15 +122,11 @@
           },
           {
             "time": "13:00",
-            "name": "Jury"
+            "name": "Team pitch to Jury"
           },
           {
             "time": "15:00",
-            "name": "Finals"
-          },
-          {
-            "time": "16:00",
-            "name": "Awards"
+            "name": "Jury deliberation & Awards"
           },
           {
             "time": "17:00",
