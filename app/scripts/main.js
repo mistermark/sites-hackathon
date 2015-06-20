@@ -82,24 +82,24 @@
       });
     }
 
-    _getWindowSize(function() {
-      $('#video-carousel').slidesjs({
-        navigation: {
-          active: false
-        },
-        play: {
-          auto: true,
-          interval: 6400
-        },
-        effect: {
-          slide: {
-            speed: 2400
-          }
-        },
-        width: 960,
-        height: 540
-      });
-    });
+    // _getWindowSize(function() {
+    //   $('#video-carousel').slidesjs({
+    //     navigation: {
+    //       active: false
+    //     },
+    //     play: {
+    //       auto: true,
+    //       interval: 6400
+    //     },
+    //     effect: {
+    //       slide: {
+    //         speed: 2400
+    //       }
+    //     },
+    //     width: 960,
+    //     height: 540
+    //   });
+    // });
 
 
 
