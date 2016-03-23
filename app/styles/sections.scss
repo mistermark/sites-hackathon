@@ -11,6 +11,22 @@
   }
 }
 
+#coming-soon {
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    font-size: 2em;
+  }
+  .cognito-form {
+    form {
+      width: 66%;
+      margin: 0 auto;
+    }
+  }
+}
+
 #hero {
   .col-md-6:nth-child(1){
     padding: 20px 15px 45px 15px;

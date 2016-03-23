@@ -12,6 +12,9 @@
   "eta": {
     "p": "Time left until the hackathon to organize:"
   },
+  "comingsoon": {
+    "p": "Coming Soon!"
+  },
   "description": {
     "h2": "Mission: Disrupt the banking industry!",
     "p": "The Backbase Hackathon is hosting developers from all Backbase locations, providing an opportunity to create new application concepts to shake up the banking industry. This is achieved by combining technologies and making small, yet significant dents in some of the most difficult problems, in whatever language, in whatever framework, in whatever development stack, and time is your only enemy. It’s a unique opportunity to delve into open APIs and technologies to create new applications for banking customers (and other businesses). <br /><br /> The game is on! Are you in?",
