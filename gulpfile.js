@@ -87,7 +87,7 @@ gulp.task('images', function() {
  */
 gulp.task('compile', function() {
   var options = {
-    ignorePartials: true,
+    ignorePartials: false,
     batch: ['./app/partials'],
     helpers: {
       html: function(string) {
