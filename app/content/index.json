@@ -4,7 +4,7 @@
   },
   "hero": {
     "h1": "Hack the system & win awesome prizes!",
-    "p": "Welcome to the 2015 Backbase Hackathon in Amsterdam and online, a two-day chance to network, learn and share knowledge with your peers next <b>19th and 20th of June 2015.</b>",
+    "p": "Welcome to the 2016 Backbase Hackathon in Amsterdam and online, a two-day chance to network, learn and share knowledge with your peers next <b>19th and 20th of June 2016.</b>",
     "imgSrc": "images/bg-blurred-code.png",
     "imgAlt": "Apply now!",
     "link": "Early bird registration until <b>1st of June</b>"
@@ -31,7 +31,7 @@
     "h2": "Prizes",
     "p":
       "<p>Apart from eternal glory and a picture of the winning team placed on our office wall, there will be some amazing prizes for the winning teams.</p>",
-    "dl1": "<dt>Grand Winner of the Backbase 2015 Hackathon<dd>Wow factor, impact, innovation, feasibility",
+    "dl1": "<dt>Grand Winner of the Backbase 2016 Hackathon<dd>Wow factor, impact, innovation, feasibility",
     "dl2": "<dt>Lesser-but-nothing-short-of-Grand Winner<dd>Great accomplishment, very impressive, but still short of that one overwhelming sparkle",
     "dl3": "<dt>Fireworks Factor<dd>Very Creative, out of the box, not very feasible but still very impressive",
     "dl4": "<dt>Pink Panther<dd>Murphy's Law, great commitment but not able to execute because of bad luck",
@@ -182,7 +182,7 @@
     ]
   },
   "credit": {
-    "p": "© 2015 Backbase. All rights reserved."
+    "p": "© 2016 Backbase. All rights reserved."
   },
   "social": {
     "networks": [
