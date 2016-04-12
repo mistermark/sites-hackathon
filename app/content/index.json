@@ -3,26 +3,32 @@
     "siteurl": "http://hackathon.backbase.com"
   },
   "hero": {
-    "h1": "Hack the system & win awesome prizes!",
-    "p": "Welcome to the 2015 Backbase Hackathon in Amsterdam and online, a two-day chance to network, learn and share knowledge with your peers next <b>19th and 20th of June 2015.</b>",
+    "h1": "Rewards for disrupting the banking system!",
+    "p": "Welcome to the 2016 Backbase Hackathon in Amsterdam and online, a two-day challenge to test your ideas and compete with your peers on 24th and 25th of June 2016.",
     "imgSrc": "images/bg-blurred-code.png",
     "imgAlt": "Apply now!",
-    "link": "Early bird registration until <b>1st of June</b>"
+    "link": "Early bird registration is open!"
   },
   "eta": {
     "p": "Time left until the hackathon to organize:"
   },
   "description": {
-    "h2": "Mission: Disrupt the banking industry!",
-    "p": "The Backbase Hackathon is hosting developers from all Backbase locations, providing an opportunity to create new application concepts to shake up the banking industry. This is achieved by combining technologies and making small, yet significant dents in some of the most difficult problems, in whatever language, in whatever framework, in whatever development stack, and time is your only enemy. It’s a unique opportunity to delve into open APIs and technologies to create new applications for banking customers (and other businesses). <br /><br /> The game is on! Are you in?",
+    "h2": "Challenge: Accepted",
+    "p": "The Backbase Hackathon is a chance for developers from all the Backbase locations to create something the banking industry has never-before seen. Do you have an idea you think others will love? Race against the clock to realise your dreams using whatever tools necessary! It’s a great opportunity to delve into open APIs and technologies to create new applications for banking customers, businesses or even your own colleagues.",
     "imgSrc": "images/description.png",
     "imgAlt": "Mobile #1!"
   },
   "attendance": {
-    "h2": "Who can attend?",
-    "p": "We’re looking for a creative mix of Backbase employees and (nearshore) partners for the two-day Hackathon – coders, designers and entrepreneurs!",
+    "h2": "The Ones to Beat",
+    "p": "Last year, 15 teams competed to hack the financial system. In the end, team Exodus took the prize with their 3D-printed piggy bank that counted the actual coins you were saving up. This information was registered and sent to the online banking platform, which displayed a real-time balance to help children learn the benefits of saving up their pennies.<br/><br/><a href='https://youtu.be/tJx_bgvWwwA'>Backbase 2015 Hackathon Trailer</a><br/><br/>Think you can do better? Let’s see what you’ve got!",
     "imgSrc": "images/hackathon-team.png",
-    "imgAlt": "Backbasers hacking a bank"
+    "imgAlt": "Backbasers hacking away"
+  },
+  "participants": {
+    "h2": "Details",
+    "p": "Who can take part?</br>All Backbase employees wherever you are, and also our near-shore partners are able to sign up. Whether you’re part of R&D, Sales, PS….everyone is welcome! We’ll have webcams set up so everyone can talk to and gently provoke encourage each other.",
+    "imgSrc": "images/hackathon-2015-winners.jpg",
+    "imgAlt": "Backbasers hacking away"
   },
   "prizes": {
     "h2": "Prizes",
