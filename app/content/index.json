@@ -21,13 +21,13 @@
   "attendance": {
     "h2": "The Ones to Beat",
     "p": "Last year, 15 teams competed to hack the financial system. In the end, team Exodus took the prize with their 3D-printed piggy bank that counted the actual coins you were saving up. This information was registered and sent to the online banking platform, which displayed a real-time balance to help children learn the benefits of saving up their pennies.<br/><br/><a href='https://youtu.be/tJx_bgvWwwA'>Backbase 2015 Hackathon Trailer</a><br/><br/>Think you can do better? Let’s see what you’ve got!",
-    "imgSrc": "images/hackathon-team.png",
+    "imgSrc": "images/hackathon-2015-winners.jpg",
     "imgAlt": "Backbasers hacking away"
   },
   "participants": {
-    "h2": "Details",
-    "p": "Who can take part?</br>All Backbase employees wherever you are, and also our near-shore partners are able to sign up. Whether you’re part of R&D, Sales, PS….everyone is welcome! We’ll have webcams set up so everyone can talk to and gently provoke encourage each other.",
-    "imgSrc": "images/hackathon-2015-winners.jpg",
+    "h2": "Who can take part?",
+    "p": "All Backbase employees wherever you are, and also our near-shore partners are able to sign up. Whether you’re part of R&D, Sales, PS….everyone is welcome! We’ll have webcams set up so everyone can talk to and gently provoke encourage each other.",
+    "imgSrc": "images/hackathon-team.png",
     "imgAlt": "Backbasers hacking away"
   },
   "prizes": {
@@ -43,11 +43,11 @@
     "imgAlt": "Eternal glory is all."
   },
   "goals": {
-    "h2": "Competition scopes",
-    "p": "You can basically compete in one of these categories:",
+    "h2": "Hackathon Competition Scope",
+    "p": "Can you believe a year has passed since the last Backbase Hackathon? I know, us too! This time, we intend to build on last year’s success by inviting even more of you to show off your skills, share your knowledge, and encourage a fun, learning environment that disrupts the banking industry. After all, that’s why we do this, right?</br></br>Compete in one of these categories:",
     "goals": [
       {
-        "title": "Free mode (you perform all the magic, with basic help if required)",
+        "title": "Freestyle: Hack the banking industry",
         "rules": [
           "We will deliver a set of APIs so people can hack on top of them",
           "We offer our <a href=\"https://backbase.atlassian.net/wiki/pages/viewpage.action?spaceKey=BRZDMO&title=Backbase+Demo+Archetype+How+To\" target=\"_blank\">Breeze API</a> (the pre-made full model you already know )",
@@ -81,9 +81,9 @@
       {
         "date": {
           "title": "Day 1",
-          "day": 19,
+          "day": 24,
           "month": "Jun",
-          "year": "2015",
+          "year": "2016",
           "sup": "th"
         },
         "events": [
@@ -273,7 +273,7 @@
     "footer": "<span style=\"text-align: center\">... and many more!</span>"
   },
   "apis": {
-    "h2": "APIs you might want to use",
+    "h2": "API Selection",
     "subtitle": "A micro-startup ecosystem is created per team in the 1st Backbase Hackathon. In order to support the needs of this small businesses we provide a versatile base for allowing integrations with your favorite frameworks and tools.",
     "ideas": [
       {

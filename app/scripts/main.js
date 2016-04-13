@@ -2,6 +2,16 @@
 
   'use strict';
 
+  var config = {
+    "date": {
+      "title": "Day 1",
+      "day": 24,
+      "month": "Jun",
+      "year": "2016",
+      "sup": "th"
+    }
+  }
+
   // Spit HTML coming from contents.json
   // Handlebars.registerHelper('strip-scripts', function(context) {
   //   return new Handlebars.SafeString(context);
@@ -43,9 +53,9 @@
   }
 
   function _setTimerHtml(obj, tl) {
-    obj.innerHTML = '<span>' + tl.days +  ' days</span>' +
-      '<span>' + tl.hours + ' hours</span>' +
-      '<span>' + tl.minutes + ' minutes</span>' +
+    obj.innerHTML = '<span>' + tl.days +  ' days</span>, ' +
+      '<span>' + tl.hours + ' hours</span>, ' +
+      '<span>' + tl.minutes + ' minutes</span>, ' +
       '<span>' + tl.seconds + ' seconds</span>';
   }
 
@@ -64,22 +74,19 @@
   document.addEventListener('DOMContentLoaded', function() {
 
     if(document.getElementById('countdown-clock') || document.getElementById('countdown')) {
-      _loadJSON('/content/index.json', function (sections) {
-          // Timer
-          var startDate = sections.agenda.days[0].date;
-          var targetDate = new Date(startDate.month + ', ' + startDate.day + ', ' + startDate.year).getTime();
-          var countdownTimer = document.getElementById('countdown-clock');
-          var countdownCounter = document.getElementById('countdown');
+      console.log(document.getElementById('countdown-clock'));
+      var startDate = config.date;
+      var targetDate = new Date(startDate.month + ', ' + startDate.day + ', ' + startDate.year).getTime();
+      var countdownTimer = document.getElementById('countdown-clock');
+      var countdownCounter = document.getElementById('countdown');
 
-          var tl = timeLeft(targetDate);
-          if (countdownCounter) {
-            _setTimerHtml(countdownCounter, tl);
-          }
-          if (countdownTimer) {
-            _setTimerHtml(countdownTimer, tl);
-          }
-
-      });
+      var tl = timeLeft(targetDate);
+      if (countdownCounter) {
+        _setTimerHtml(countdownCounter, tl);
+      }
+      if (countdownTimer) {
+        _setTimerHtml(countdownTimer, tl);
+      }
     }
 
     // _getWindowSize(function() {
