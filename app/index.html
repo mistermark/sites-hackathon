@@ -8,15 +8,180 @@
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <div class="container" id="header">
+    <div class="row">
+      {{> header}}
+    </div>
+  </div>
+
+  <section class="tiled">
+    <div class="container">
+      <div class="row" id="hero">
+        {{> hero}}
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="whited">
+    <div class="container">
+      <div class="row" id="eta">
+        {{> eta}}
+      </div>
+    </div>
+  </section> -->
+
+  <section class="grayed">
+    <div class="container">
+      <div class="row" id="description">
+        {{> description}}
+      </div>
+    </div>
+  </section>
+
   <section class="whited">
     <div class="container">
+      <div class="row" id="attendance">
+        {{> attendance}}
+      </div>
+    </div>
+  </section>
+
+  <section class="grayed">
+    <div class="container">
+      <div class="row" id="participants">
+        {{> participants}}
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="grayed">
+    <div class="container">
+      <div class="row" id="judgment">
+        {{> judgment}}
+      </div>
+    </div>
+  </section>
+
+  <section class="whited">
+    <div class="container">
+      <div class="row" id="prizes">
+        {{> prizes}}
+      </div>
+    </div>
+  </section>
+
+  <section class="grayed">
+    <div class="container">
+      <div class="row" id="agenda-title">
+        <h2>Agenda</h2>
+      </div>
+      <div class="row" id="agenda">
+        {{> agenda}}
+      </div>
+    </div>
+  </section>
+-->
+  <section class="whited">
+    <div class="container">
+      <div class="row" id="goals">
+        {{> goals}}
+      </div>
+    </div>
+  </section>
+
+  <section class="grayed">
+    <div class="container">
+      <div class="row" id="inspiration">
+        {{> inspiration}}
+      </div>
+    </div>
+  </section>
+
+  <section class="whited">
+    <div class="container">
+      <div id="joinus">
+        {{> joinus}}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="grayed">
+    <div class="container">
+      <div class="row" id="apis">
+        {{> apis}}
+      </div>
+    </div>
+  </section>
+
+  <section class="tiled">
+    <div class="container">
       <div class="row">
-        <div class="col-md-12" id="coming-soon">
-          {{> coming-soon}}
+        <div class="col-md-6" id="apply">
+          {{> apply}}
+        </div>
+        <div class="col-md-6" id="register">
+          <div class="signup-teams cognito">
+            <p><i class="fa fa-unlock"></i></p>
+            <h4>Early bird registrations are now open!</h4>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+
+  <!-- <section class="grayed">
+    <div class="container">
+        <div id="survey">
+          {{> survey}}
+        </div>
+    </div>
+  </section>
+
+  <section class="whited">
+    <div class="container">
+      <div id="sponsors">
+        {{> sponsors}}
+      </div>
+    </div>
+  </section>
+
+  <section class="grayed">
+    <div class="container">
+      <script src="//instansive.com/widget/js/instansive.js"></script>
+      <iframe src="//instansive.com/widgets/8626232f966fdb4a4734e1c7b6b7b44e361a8f48.html"
+              id="instansive_8626232f96"
+              name="instansive_8626232f96"
+              scrolling="no"
+              allowtransparency="true"
+              class="instansive-widget"
+              style="width: 100%; border: 0; overflow: hidden;">
+      </iframe>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="blackened">
+    <div class="container">
+      <div class="row footer">
+        <div class="col-md-6">
+          <span id="credit">
+            {{> credit}}
+          </span>
+        </div>
+        <div class="col-md-6">
+          <span id="social" class="pull-right">
+            {{> social}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="rules">
+    {{> rules}}
+  </div>
 
 </body>
 </html>

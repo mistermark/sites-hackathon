@@ -87,6 +87,12 @@
   }
 }
 
+#participants {
+  .images-wrapper {
+    height: 240px;
+  }
+}
+
 #prizes {
   img {
     padding: 60px 0;
@@ -159,7 +165,7 @@
 }
 
 #register {
-  .fa-lock {
+  .fa-lock, .fa-unlock {
     font-size: 10em;
   }
   p, h4 {
