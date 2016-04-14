@@ -206,8 +206,9 @@ gulp.task('build', ['html', 'extras'], function() {
 gulp.task('deploy', ['build'], function() { //, ['build']
   return gulp.src('dist')
     .pipe($.subtree({
-      message: 'Site updated at ' + new Date(),
-      branch: 'gh-pages'
+      message: 'Site updated on ' + new Date(),
+      branch: 'gh-pages',
+      remote: 'upstream'
     }))
     .pipe($.clean());
 });
