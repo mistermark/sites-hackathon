@@ -158,28 +158,16 @@
     "h2": "Sponsored by",
     "brands": [
       {
-        "name": "Levi9",
-        "imgSrc": "images/sponsors/levi9.jpg",
-        "imgAlt": "Levi9 - IT Services",
-        "href": "http://www.levi9.com/"
-      },
-      {
         "name": "Gecko",
         "imgSrc": "images/sponsors/gecko.jpg",
         "imgAlt": "Gecko Solutions - We know IT",
         "href": "http://www.gecko.rs/"
       },
       {
-        "name": "JetBrains",
-        "imgSrc": "images/sponsors/jetbrains.png",
-        "imgAlt": "JetBrains- Develop with Pkeasure",
-        "href": "https://www.jetbrains.com"
-      },
-      {
-        "name": "ITgma",
-        "imgSrc": "images/sponsors/itgma.png",
-        "imgAlt": "ITgma helps the companies to rethink",
-        "href": "http://www.itgma.com/"
+        "name": "BE Poland",
+        "imgSrc": "images/sponsors/bepoland.png",
+        "imgAlt": "BE Poland - Think, Solve, Execute",
+        "href": "http://www.be-tse.com/"
       }
 
     ]
