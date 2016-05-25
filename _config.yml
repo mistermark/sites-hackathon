@@ -9,7 +9,7 @@
 title: Backbase Hackathon 2016
 email: hackathon@backbase.com
 description: The Backbase Hackathon is hosting developers from all Backbase locations, providing an opportunity to create new application concepts to shake up the banking industry.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/sites-hackathon/" # the subpath of your site, e.g. /blog
 url: "http://hackathon.backbase.com" # the base hostname & protocol for your site
 
 twitter_username: backbase
