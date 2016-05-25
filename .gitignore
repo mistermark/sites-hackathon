@@ -1,7 +1,8 @@
 .DS_Store
 .idea
-.sass-cache
-.tmp
 bower_components
 node_modules
-test/bower_components
+
+_site/
+.sass-cache/
+.jekyll-metadata

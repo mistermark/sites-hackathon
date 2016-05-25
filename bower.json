@@ -1,9 +1,0 @@
-{
-  "name": "bb-hackathon-2015",
-  "private": true,
-  "dependencies": {
-    "fontawesome": "~4.3.0",
-    "bootstrap-css-only": "~3.3.4",
-    "bootstrap-sass-official": "~3.3.4"
-  }
-}
