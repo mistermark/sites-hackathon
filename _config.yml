@@ -16,5 +16,4 @@ twitter_username: backbase
 github_username:  backbase
 
 # Build settings
-source: "_app"
 markdown: kramdown
