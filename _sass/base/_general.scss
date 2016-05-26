@@ -1,0 +1,83 @@
+// General classes
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+section {
+  &.tiled {
+    color: white;
+    background: $page-bg-color url($tile-img-url) repeat;
+  }
+  &.blackened {
+    color: $descr-fg-color;
+    background-color: $footer-bg-color;
+    padding: 25px 0 10px 0;
+    img {
+      opacity: 0.4;
+    }
+  }
+  &.grayed {
+    padding: 30px 0;
+    h2 {
+      color: $footer-bg-color;
+      opacity: 0.9;
+    }
+    p {
+      color: $descr-fg-color;
+    }
+    background-color: $descr-bg-color;
+  }
+  &.whited {
+    padding: 30px 0;
+  }
+}
+
+article.post {
+  margin: 3em 0;
+}
+
+.images-wrapper {
+  margin: 20px 0;
+  background: no-repeat $page-bg-color scroll;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid $img-border-color;
+  border-radius: 2px;
+}
+
+.img-border {
+  width: 90%;
+  margin: 20px 0;
+  border: 5px solid $img-border-color;
+  border-radius: 2px;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.btn {
+  box-shadow: 0 0.5px 0.5px 0.5px $footer-bg-color;
+  padding: 5px 15px !important;
+  &.btn-default {
+    color: $bb-red !important;
+  }
+  &.btn-danger {
+    background-color: $bb-red;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+}
