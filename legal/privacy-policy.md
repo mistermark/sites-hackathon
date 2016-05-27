@@ -5,8 +5,7 @@ permalink: /legal/privacy-policy/
 ---
 
 1.	Backbase Europe BV, Jacob Bontiusplaats 9, 1018 LL, Amsterdam, The Netherlands (Backbase) is committed to safeguarding your privacy.
-2.	We may collect, store and use the following types of that via the http://hackathon.backbase.com/ website (the “Website”):
-    -	information about your computer and about your visits to and use of this website (including [your IP address, geographical location, browser type and version, operating system, referral source, length of visit, page views and website navigation paths])];
+2.	We may collect, store and use the following types of that via the http://hackathon.backbase.com/ website (the &ldquo;Website&rdquo;):
     -	information that you provide to Backbase when registering on the Website;
     -	information contained in or relating to any communication that you send to us or send through our website.
 3.	Before you disclose to us the personal information of another person, you must obtain that person's consent to both the disclosure and the processing of that personal information in accordance with this policy.
