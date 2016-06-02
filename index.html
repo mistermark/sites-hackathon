@@ -1,23 +1,69 @@
 ---
-layout: homepage
+layout: default
 ---
 
-<!-- <div class="home">
+<section class="tiled">
+  <div class="container">
+    {% include sections/hero.html %}
+  </div>
+</section>
 
-  <h1 class="page-heading">Posts</h1>
+<section class="whited">
+  <div class="container">
+    {% include sections/countdown.html %}
+  </div>
+</section>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<section class="grayed">
+  <div class="container">
+    {% include sections/description.html %}
+  </div>
+</section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<section class="whited">
+  <div class="container">
+    {% include sections/attendance.html %}
+  </div>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<section class="grayed">
+  <div class="container">
+    {% include sections/participants.html %}
+  </div>
+</section>
 
-</div> -->
+<section class="whited">
+  <div class="container">
+    {% include sections/goals.html %}
+  </div>
+</section>
+
+<section class="grayed">
+  <div class="container">
+    {% include sections/inspiration.html %}
+  </div>
+</section>
+
+<section class="whited">
+  <div class="container">
+    {% include sections/joinus.html %}
+  </div>
+</section>
+
+<section class="grayed">
+  <div class="container">
+    {% include sections/apis.html %}
+  </div>
+</section>
+
+<section class="tiled">
+  <div class="container">
+    {% include sections/register.html %}
+  </div>
+</section>
+
+<section class="whited">
+  <div class="container">
+    {% include sections/sponsors.html %}
+  </div>
+</section>
