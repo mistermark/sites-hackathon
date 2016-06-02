@@ -188,6 +188,14 @@
   p, h4 {
     text-align: center;
   }
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
 }
 
 #survey {
