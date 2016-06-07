@@ -7,14 +7,14 @@
     'date': [{
       'name': 'Day 1',
       'time': '09:00',
-      'day': 24,
+      'day': '24',
       'month': 'June',
       'year': '2016',
       'sup': 'th'
     },{
       'name': 'Day 2',
       'time': '09:00',
-      'day': 25,
+      'day': '25',
       'month': 'June',
       'year': '2016',
       'sup': 'th'
@@ -34,12 +34,15 @@
 
   // Countdown
   var _timeRemaining = function(startDate) {
-    var targetDate = Date.parse(startDate.time +' '+ startDate.day +' '+ startDate.month +' '+ startDate.year) - Date.parse(new Date());
+    var targetDate = Date.parse(startDate.day +' '+ startDate.month +' '+ startDate.year +' '+ startDate.time) - Date.parse(new Date());
 
     var seconds = Math.floor( (targetDate/1000) % 60);
     var minutes = Math.floor( (targetDate/1000/60) % 60 );
     var hours = Math.floor( (targetDate/(1000*60*60)) % 24 );
     var days = Math.floor( targetDate/(1000*60*60*24) );
+
+    console.log(startDate);
+    console.log(targetDate);
 
     return {
       'total': targetDate,
