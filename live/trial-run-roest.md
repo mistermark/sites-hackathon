@@ -17,11 +17,19 @@ permalink: /live/feed/trial-run-roest
     	player.load('backbase');
       player.startPlayback();
 
+      setInterval("updateViewerCount()", 5000);
+    } else if (event == "connectionEvent") {
       title.innerHTML = player.getChannelFullName();
     }
 
     log.innerHTML = log.innerHTML + event + '<br/>';
   }
+
+  function updateViewerCount() {
+    viewerCount = document.getElementById('viewerCount');
+    viewerCount.innerHTML = 'Currently ' + player.getViewerCount() + ' people are watching.';
+  }
+
   swfobject.embedSWF("http://cdn.livestream.com/chromelessPlayer/v21/playerapi.swf", "livestreamPlayer", "640", "385", "9.0.0", "expressInstall.swf", null, params);
 
 </script>
@@ -31,4 +39,5 @@ permalink: /live/feed/trial-run-roest
   <h1>This page requires flash</h1>
   <p><a href="http://www.adobe.com/go/getflashplayer">Download Flash</a></p>
 </div>
+<p id="viewerCount"></p>
 <pre id="log"></pre>
