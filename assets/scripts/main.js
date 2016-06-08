@@ -41,9 +41,6 @@
     var hours = Math.floor( (targetDate/(1000*60*60)) % 24 );
     var days = Math.floor( targetDate/(1000*60*60*24) );
 
-    console.log(startDate);
-    console.log(targetDate);
-
     return {
       'total': targetDate,
       'days': days,
