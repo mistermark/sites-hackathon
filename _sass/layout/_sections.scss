@@ -9,6 +9,15 @@
   .col-md-6:nth-child(2){
     text-align: right;
   }
+  .spotify-link {
+    font-size: 1.2em;
+    line-height: 1em;
+    color: $footer-bg-color;
+    i {
+      color: #19b26b;
+      font-size: 1.6em;
+    }
+  }
 }
 
 #coming-soon {
