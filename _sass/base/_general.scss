@@ -28,6 +28,9 @@ section {
       color: $footer-bg-color;
       opacity: 0.9;
     }
+    .row > h2 {
+      text-align: center;
+    }
     p {
       color: $descr-fg-color;
     }
