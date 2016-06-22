@@ -1,3 +1,4 @@
+/* globals channels */
 (function(){
 
   'use strict';
@@ -70,6 +71,19 @@
 
     _updateClock();
     var timeInterval = setInterval(_updateClock, 1000);
+  };
+
+  window._initLivestreams = function(channel) {
+
+    var iframeHtml = '<iframe width="640" height="385" src="http://cdn.livestream.com/embed/{channelName}?layout=4&color=0x000000&autoPlay=true&mute=true&iconColorOver=0xe7e7e7&iconColor=0xcccccc&allowchat=false&height=385&width=640" style="border:0;outline:0" frameborder="0" scrolling="no"></iframe>';
+    var placeholder = 'livestream-iframe';
+
+    var _renderIframe = function(channelName) {
+      return iframeHtml.replace('{channelName}', channelName);
+    };
+
+    var channelSlide = document.getElementById('channel-'+ channel.name);
+    channelSlide.getElementsByClassName(placeholder)[0].innerHTML = _renderIframe(channel.name);
   };
 
   // Main

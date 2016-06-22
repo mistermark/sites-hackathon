@@ -1,0 +1,32 @@
+- name: hackathon_amsterdam_1
+  title: Backbase - Amsterdam 1
+
+- name: hackathon_amsterdam_2
+  title: Backbase - Amsterdam 2
+
+- name: hackathon_atlanta_1
+  title: Backbase - Atlanta
+
+- name: hackathon_kiev_1
+  title: Levi9 - Kiev
+
+- name: hackathon_skopje_1
+  title: Endava - Skopje
+
+- name: hackathon_cluj_1
+  title: Endava - Cluj
+
+- name: hackathon_chisinau_1
+  title: Endava - Chisinau
+
+- name: hackathon_belgrade_1
+  title: Endava - Belgrade
+
+# - name: hackathon_newjersey_1
+#   title: Endava - New Jersey
+
+- name: hackathon_poland_1
+  title: BE Poland - Poland
+
+- name: hackathon_uk_1
+  title: Deloitte Digital - United Kingdom

@@ -1,43 +1,16 @@
 ---
-layout: page
+layout: live-feed
 title: Live Feed Trial Run
 permalink: /live/feed/trial-run-roest
 ---
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-<script type="text/javascript">
-  params = { AllowScriptAccess: 'always' };
-  function livestreamPlayerCallback(event) {
-    var log = document.getElementById('log');
-    var title = document.getElementById('playerTitle');
-    if (event == 'ready') {
+<ul class="livestream-carousel">
+{% for channel in site.data.livestream.channels %}
+  <li class="livestream-slide" id="channel-{{ channel.name }}">
 
-      player = document.getElementById("livestreamPlayer");
-    	player.setDevKey('3w6FhkVPOMgxtdznR_DvWfSr5YtOF7yMWKdEThRJZukhCzbmmIUJEDQK6bA9dcnXL_b7tHE6JMNSRmyBRSqGInTcg7o7eb9_Ka_wK-xn4wk');
-    	player.load('backbase');
-      player.startPlayback();
+    <h2 class="playerTitle">{{ channel.title }}</h2>
+    <div class="livestream-iframe"></div>
 
-      setInterval("updateViewerCount()", 5000);
-    } else if (event == "connectionEvent") {
-      title.innerHTML = player.getChannelFullName();
-    }
-
-    log.innerHTML = log.innerHTML + event + '<br/>';
-  }
-
-  function updateViewerCount() {
-    viewerCount = document.getElementById('viewerCount');
-    viewerCount.innerHTML = 'Currently ' + player.getViewerCount() + ' people are watching.';
-  }
-
-  swfobject.embedSWF("http://cdn.livestream.com/chromelessPlayer/v21/playerapi.swf", "livestreamPlayer", "640", "385", "9.0.0", "expressInstall.swf", null, params);
-
-</script>
-
-<h2 id="playerTitle"></h2>
-<div id="livestreamPlayer">
-  <h1>This page requires flash</h1>
-  <p><a href="http://www.adobe.com/go/getflashplayer">Download Flash</a></p>
-</div>
-<p id="viewerCount"></p>
-<pre id="log"></pre>
+  </li>
+{% endfor %}
+</ul>
