@@ -22,15 +22,19 @@ section {
       opacity: 0.4;
     }
   }
+  &.whited,
+  &.grayed {
+    .row > h2 {
+      text-align: center;
+    }
+  }
   &.grayed {
     padding: 30px 0;
     h2 {
       color: $footer-bg-color;
       opacity: 0.9;
     }
-    .row > h2 {
-      text-align: center;
-    }
+
     p {
       color: $descr-fg-color;
     }

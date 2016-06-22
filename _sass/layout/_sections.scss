@@ -145,23 +145,20 @@
   }
 }
 
-#agenda-title {
-  text-align: center;
-}
-
 #agenda {
   padding-bottom: 40px;
   dl {
     text-align: left;
     margin-bottom: 10px;
     dt {
-      float: left;
-      display: block;
-      margin-right: 10px;
+      // float: left;
+      // display: block;
+      // margin-right: 10px;
       text-align: right;
     }
     dd {
       color: $descr-fg-color;
+      margin-bottom: 0.4em;
     }
   }
 }
