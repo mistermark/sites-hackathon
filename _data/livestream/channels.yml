@@ -1,12 +1,12 @@
 - name: hackathon_amsterdam_1
   title: Backbase - Amsterdam 1
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_amsterdam_2
   title: Backbase - Amsterdam 2
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_atlanta_1
   title: Backbase - Atlanta
