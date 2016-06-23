@@ -1,5 +1,5 @@
 .livestream-wrapper {
-  .slick-controls > div {
+  div[class^="col-md-"] {
     position: static;
   }
 }

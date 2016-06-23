@@ -16,7 +16,7 @@
 - name: hackathon_kiev_1
   title: Levi9 - Kiev
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_skopje_1
   title: Endava - Skopje
@@ -26,7 +26,7 @@
 - name: hackathon_cluj_1
   title: Endava - Cluj
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_chisinau_1
   title: Endava - Chisinau
@@ -38,9 +38,10 @@
   offline: false
   test: true
 
-# - name: hackathon_newjersey
-#   title: Endava - New Jersey
-#   offline: true
+- name: hackathon_newjersey
+  title: Endava - New Jersey
+  offline: true
+  test: true
 
 - name: hackathon_poland_1
   title: BE Poland - Poland
@@ -50,4 +51,4 @@
 - name: hackathon_uk_1
   title: Deloitte Digital - United Kingdom
   offline: false
-  test: true
+  test: false

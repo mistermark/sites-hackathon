@@ -22,9 +22,14 @@
     }]
   };
 
-  var _setRefreshPageTime = function() {
+  var _epochTime = function() {
     var date = new Date();
-    console.log(date);
+    return Math.floor( date.getTime() / 1000 );
+  };
+
+  var _setRefreshPageTime = function() {
+    var epoch = _epochTime();
+    console.log(epoch);
   };
 
   // Countdown
@@ -67,12 +72,38 @@
     var timeInterval = setInterval(_updateClock, 1000);
   };
 
+  var _resizeIframe = function(target, cb) {
+    switch (target) {
+      case 'maximize':
+          $('html').addClass('livestream-fullscreen');
+          $('.livestream-carousel').not('.slick-initialized').slick('reInit');
+        break;
+      default:
+          $('html').removeClass('livestream-fullscreen');
+          $('.livestream-carousel').not('.slick-initialized').slick('reInit');
+        break;
+    }
+
+    if(cb) {
+      cb();
+    }
+  };
+
+  var _slickResize = function(target) {
+    _resizeIframe(target, function() {
+      $('.livestream-iframe').each(function(i, obj) {
+        var url = obj.src + '&uid='+ _epochTime();
+        obj.src = url;
+      });
+    });
+  };
+
   window._initLivestreams = function(channel) {
     console.log('Initialize LiveStreams');
 
     if(channel.offline !== 'true' && channel.test !== 'true') {
       var iframeHtml = '<iframe class="livestream-iframe" width="640" height="385" src="http://cdn.livestream.com/embed/{channelName}?layout=4&color=0x000000&autoPlay=true&mute=true&iconColorOver=0xe7e7e7&iconColor=0xcccccc&allowchat=false&height=385&width=640" style="border:0;outline:0" frameborder="0" scrolling="no"></iframe>';
-      var placeholder = 'livestream-iframe';
+      var placeholder = 'livestream-iframe-placeholder';
 
       var _renderIframe = function(channelName) {
         return iframeHtml.replace('{channelName}', channelName);
@@ -88,15 +119,11 @@
   document.addEventListener('DOMContentLoaded', function() {
 
     $('.slick-maximize').on('click', function() {
-      $('html').addClass('livestream-fullscreen');
-      // $('html').addClass('fullscreen');
-      $('.livestream-carousel').not('.slick-initialized').slick('reInit');
+      _slickResize('maximize');
     });
 
     $('.slick-normalize').on('click', function() {
-      $('html').removeClass('livestream-fullscreen');
-      // $('.livestream-carousel').removeClass('fullscreen');
-      $('.livestream-carousel').not('.slick-initialized').slick('reInit');
+      _slickResize('normalize');
     });
 
     if (config.countdownClock) {
