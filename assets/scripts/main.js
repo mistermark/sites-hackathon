@@ -1,4 +1,4 @@
-/* globals channels */
+/* globals channels, slickOpts */
 (function(){
 
   'use strict';
@@ -22,16 +22,10 @@
     }]
   };
 
-  // function _getWindowSize(cb) {
-  //
-  //   $('#video-carousel').width(window.innerWidth);
-  //   $('#video-carousel').height(window.innerHeight);
-  //
-  //   if(cb) {
-  //     cb();
-  //   }
-  //
-  // }
+  var _setRefreshPageTime = function() {
+    var date = new Date();
+    console.log(date);
+  };
 
   // Countdown
   var _timeRemaining = function(startDate) {
@@ -74,45 +68,43 @@
   };
 
   window._initLivestreams = function(channel) {
+    console.log('Initialize LiveStreams');
 
-    var iframeHtml = '<iframe width="640" height="385" src="http://cdn.livestream.com/embed/{channelName}?layout=4&color=0x000000&autoPlay=true&mute=true&iconColorOver=0xe7e7e7&iconColor=0xcccccc&allowchat=false&height=385&width=640" style="border:0;outline:0" frameborder="0" scrolling="no"></iframe>';
-    var placeholder = 'livestream-iframe';
+    if(channel.offline !== 'true' && channel.test !== 'true') {
+      var iframeHtml = '<iframe class="livestream-iframe" width="640" height="385" src="http://cdn.livestream.com/embed/{channelName}?layout=4&color=0x000000&autoPlay=true&mute=true&iconColorOver=0xe7e7e7&iconColor=0xcccccc&allowchat=false&height=385&width=640" style="border:0;outline:0" frameborder="0" scrolling="no"></iframe>';
+      var placeholder = 'livestream-iframe';
 
-    var _renderIframe = function(channelName) {
-      return iframeHtml.replace('{channelName}', channelName);
-    };
+      var _renderIframe = function(channelName) {
+        return iframeHtml.replace('{channelName}', channelName);
+      };
 
-    var channelSlide = document.getElementById('channel-'+ channel.name);
-    channelSlide.getElementsByClassName(placeholder)[0].innerHTML = _renderIframe(channel.name);
+      var channelSlide = document.getElementById('channel-'+ channel.name);
+      channelSlide.getElementsByClassName(placeholder)[0].innerHTML = _renderIframe(channel.name);
+    }
+
   };
 
   // Main
   document.addEventListener('DOMContentLoaded', function() {
 
+    $('.slick-maximize').on('click', function() {
+      $('html').addClass('livestream-fullscreen');
+      // $('html').addClass('fullscreen');
+      $('.livestream-carousel').not('.slick-initialized').slick('reInit');
+    });
+
+    $('.slick-normalize').on('click', function() {
+      $('html').removeClass('livestream-fullscreen');
+      // $('.livestream-carousel').removeClass('fullscreen');
+      $('.livestream-carousel').not('.slick-initialized').slick('reInit');
+    });
+
     if (config.countdownClock) {
       _initClock();
     }
 
-    // _getWindowSize(function() {
-    //   $('#video-carousel').slidesjs({
-    //     navigation: {
-    //       active: false
-    //     },
-    //     play: {
-    //       auto: true,
-    //       interval: 6400
-    //     },
-    //     effect: {
-    //       slide: {
-    //         speed: 2400
-    //       }
-    //     },
-    //     width: 960,
-    //     height: 540
-    //   });
-    // });
-
-
+    _setRefreshPageTime();
 
   });
+
 })();

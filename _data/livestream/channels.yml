@@ -1,32 +1,53 @@
 - name: hackathon_amsterdam_1
   title: Backbase - Amsterdam 1
+  offline: false
+  test: true
 
 - name: hackathon_amsterdam_2
   title: Backbase - Amsterdam 2
+  offline: false
+  test: true
 
 - name: hackathon_atlanta_1
   title: Backbase - Atlanta
+  offline: false
+  test: true
 
 - name: hackathon_kiev_1
   title: Levi9 - Kiev
+  offline: false
+  test: true
 
 - name: hackathon_skopje_1
   title: Endava - Skopje
+  offline: false
+  test: true
 
 - name: hackathon_cluj_1
   title: Endava - Cluj
+  offline: false
+  test: true
 
 - name: hackathon_chisinau_1
   title: Endava - Chisinau
+  offline: false
+  test: true
 
-- name: hackathon_belgrade_1
+- name: hackathon_belgrade
   title: Endava - Belgrade
+  offline: false
+  test: true
 
-# - name: hackathon_newjersey_1
+# - name: hackathon_newjersey
 #   title: Endava - New Jersey
+#   offline: true
 
 - name: hackathon_poland_1
   title: BE Poland - Poland
+  offline: false
+  test: true
 
 - name: hackathon_uk_1
   title: Deloitte Digital - United Kingdom
+  offline: false
+  test: true

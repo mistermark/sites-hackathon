@@ -1,0 +1,113 @@
+.livestream-wrapper {
+  .slick-controls > div {
+    position: static;
+  }
+}
+.slick-control {
+  background-color: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  &.slick-normalize {
+    display: none;
+  }
+  html.livestream-fullscreen &.slick-normalize {
+    display: block;
+    position: absolute;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+  }
+}
+
+ul.livestream-carousel {
+  overflow: hidden;
+  &,
+  & li.livestream-slide {
+    width: 640px;
+    height: 385px;
+  }
+
+  html.livestream-fullscreen & {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: $page-bg-color;
+    &,
+    & li.livestream-slide,
+    & .livestream-iframe,
+    & .livestream-testscreen {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  &,
+  .slick-dots {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li.livestream-slide {
+    position: relative;
+  }
+  .livestream-testscreen {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center url('/assets/images/tv-testscreen.svg');
+    background-size: cover;
+  }
+  .livestream-title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: transparentize($backbase-brown, 0.6);
+    color: transparentize($page-bg-color, 0.2);
+    padding: 0 0.6em;
+  }
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    margin-bottom: 0;
+    padding: 1em;
+    z-index: 1100;
+    background-color: transparentize($backbase-brown, 0.6);
+    border: none;
+    color: transparentize($page-bg-color, 0.2);
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+  ul.slick-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    li {
+      display: inline-block;
+      margin: 0 0.2em;
+      &.slick-active button {
+        border: 3px solid transparentize($backbase-brown, 0.2);
+        background-color: transparent;
+      }
+    }
+    button {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin: 0;
+      padding: 0;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      background-color: transparentize($backbase-brown, 0.2);
+      color: transparent;
+    }
+  }
+}

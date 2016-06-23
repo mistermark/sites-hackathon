@@ -2,24 +2,4 @@
 layout: page
 ---
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript">
-
-window.channels = [
-  {% for channel in site.data.livestream.channels %}
-  {
-    "name": "{{ channel.name }}",
-    "title": "{{ channel.title }}"
-  },
-  {% endfor %}
-];
-
-document.addEventListener('DOMContentLoaded', function() {
-  for (var i = 0; i < channels.length; i++) {
-    _initLivestreams(channels[i]);
-  }
-});
-
-</script>
-
 {{content}}
