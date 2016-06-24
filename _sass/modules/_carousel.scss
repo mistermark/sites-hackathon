@@ -20,6 +20,9 @@
     top: 0;
     right: 0;
   }
+  &.hidden {
+    display: none;
+  }
 }
 
 ul.livestream-carousel {

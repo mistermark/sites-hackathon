@@ -9,6 +9,8 @@ permalink: /live/
 <div class="livestream-wrapper">
   <div class="row">
     <div class="col-md-12">
+      <button type="button" name="button" class="slick-control slick-stop"><i class="fa fa-stop"></i></button>
+      <button type="button" name="button" class="slick-control slick-start hidden"><i class="fa fa-play"></i></button>
       <button type="button" name="button" class="slick-control slick-maximize"><i class="fa fa-arrows-alt"></i></button>
       <button type="button" name="button" class="slick-control slick-normalize"><i class="fa fa-close"></i></button>
     </div>

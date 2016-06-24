@@ -29,13 +29,19 @@
   };
 
   var _setRefreshPageTime = function() {
-    // console.log("setting page refresh");
+    $('.slick-start').addClass('hidden');
+    $('.slick-stop').removeClass('hidden');
     var epoch = _epochTime();
-    setInterval(function() {
+    window.pageRefeshInterval = setInterval(function() {
       var urlSearch = '?time='+ epoch;
-      // var windowUrl = window.location;
       window.location.search = urlSearch;
-    }, 600000); //10 minutes
+    }, 600000); //10 minutes = 600000
+  };
+
+  var _stopRefreshPagetime = function() {
+    $('.slick-stop').addClass('hidden');
+    $('.slick-start').removeClass('hidden');
+    clearInterval(window.pageRefeshInterval);
   };
 
   // Countdown
@@ -130,6 +136,13 @@
 
     $('.slick-normalize').on('click', function() {
       _slickResize('normalize');
+    });
+
+    $('.slick-stop').on('click', function() {
+      _stopRefreshPagetime('stop');
+    });
+    $('.slick-start').on('click', function() {
+      _setRefreshPageTime();
     });
 
     if (config.countdownClock && config.stopCounting !== true) {
