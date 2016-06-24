@@ -21,7 +21,7 @@
 - name: hackathon_skopje_1
   title: Endava - Skopje
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_cluj_1
   title: Endava - Cluj
