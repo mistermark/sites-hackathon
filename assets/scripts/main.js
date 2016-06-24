@@ -5,6 +5,7 @@
 
   var config = {
     'countdownClock': document.getElementsByClassName('countdown-clock'),
+    'stopCounting': true,
     'date': [{
       'name': 'Day 1',
       'time': '09:00',
@@ -126,7 +127,7 @@
       _slickResize('normalize');
     });
 
-    if (config.countdownClock) {
+    if (config.countdownClock && config.stopCounting !== true) {
       _initClock();
     }
 
