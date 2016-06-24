@@ -45,7 +45,7 @@
 
 - name: hackathon_poland_1
   title: BE Poland - Poland
-  offline: false
+  offline: true
   test: false
 
 - name: hackathon_uk_1
