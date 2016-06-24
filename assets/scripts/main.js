@@ -35,7 +35,7 @@
     window.pageRefeshInterval = setInterval(function() {
       var urlSearch = '?time='+ epoch;
       window.location.search = urlSearch;
-    }, 1800000); //30 minutes = 1800000
+    }, 3600000); //30 minutes = 1800000
   };
 
   var _stopRefreshPagetime = function() {
