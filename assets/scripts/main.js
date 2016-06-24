@@ -29,8 +29,13 @@
   };
 
   var _setRefreshPageTime = function() {
+    // console.log("setting page refresh");
     var epoch = _epochTime();
-    console.log(epoch);
+    setInterval(function() {
+      var urlSearch = '?time='+ epoch;
+      // var windowUrl = window.location;
+      window.location.search = urlSearch;
+    }, 600000); //10 minutes
   };
 
   // Countdown
