@@ -31,7 +31,7 @@
 - name: hackathon_chisinau_1
   title: Endava - Chisinau
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_belgrade
   title: Endava - Belgrade
