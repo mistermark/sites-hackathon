@@ -11,7 +11,7 @@
 - name: hackathon_atlanta_1
   title: Backbase - Atlanta
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_kiev_1
   title: Levi9 - Kiev
