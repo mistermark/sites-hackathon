@@ -35,7 +35,7 @@
     window.pageRefeshInterval = setInterval(function() {
       var urlSearch = '?time='+ epoch;
       window.location.search = urlSearch;
-    }, 600000); //10 minutes = 600000
+    }, 1800000); //30 minutes = 1800000
   };
 
   var _stopRefreshPagetime = function() {
@@ -91,6 +91,7 @@
           $('.livestream-carousel').not('.slick-initialized').slick('reInit');
         break;
       default:
+          _stopRefreshPagetime('stop');
           $('html').removeClass('livestream-fullscreen');
           $('.livestream-carousel').not('.slick-initialized').slick('reInit');
         break;
@@ -144,6 +145,10 @@
     $('.slick-start').on('click', function() {
       _setRefreshPageTime();
     });
+
+    if(window.location.search.indexOf('time=') > -1) {
+      $('.slick-maximize').click();
+    }
 
     if (config.countdownClock && config.stopCounting !== true) {
       _initClock();
