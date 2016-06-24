@@ -36,7 +36,7 @@
 - name: hackathon_belgrade
   title: Endava - Belgrade
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_newjersey
   title: Endava - New Jersey
@@ -46,7 +46,7 @@
 - name: hackathon_poland_1
   title: BE Poland - Poland
   offline: false
-  test: true
+  test: false
 
 - name: hackathon_uk_1
   title: Deloitte Digital - United Kingdom
