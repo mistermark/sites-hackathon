@@ -6,6 +6,9 @@ permalink: /live/
 
 <p>Keep an eye on the hackers of the Backbase Hackathon 2016 Edition while they're creating awesome things!</p>
 
+### The Live feed is offline.
+
+{% comment %}
 <div class="livestream-wrapper">
   <div class="row">
     <div class="col-md-12">
@@ -39,3 +42,5 @@ permalink: /live/
     </div>
   </div>
 </div>
+
+{% endcomment %}
