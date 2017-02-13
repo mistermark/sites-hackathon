@@ -1,8 +1,9 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="{{ '/assets/vendor/slick/slick.js' | prepend: site.baseurl }}"></script>
 
 {% if page.layout == 'live-feed' %}
 <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-<script type="text/javascript" src="{{ '/assets/vendor/slick/slick.js' | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ '/assets/scripts/live-feed.js' | prepend: site.baseurl }}"></script>
 <script type="text/javascript">
   window.channels = [
     {% for channel in site.data.livestream.channels %}
@@ -38,3 +39,4 @@
 {% endif %}
 
 <script type="text/javascript" src="{{ '/assets/scripts/main.js' | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ '/assets/scripts/photos-carousel.js' | prepend: site.baseurl }}"></script>

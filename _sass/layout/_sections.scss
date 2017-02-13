@@ -183,6 +183,21 @@
   }
 }
 
+#stay-tunned {
+  h2 {
+    padding-top: 1em;
+    text-align: center;
+  }
+}
+
+#photos {
+  h3 {
+    padding-top: 1em;
+    text-align: center;
+  }
+}
+
+
 #apply {
   font-size: 12px;
   padding: 25px 15px 40px 15px;
@@ -201,7 +216,7 @@
 }
 
 #register {
-  .fa-lock, .fa-unlock {
+  .fa-lock, .fa-unlock, .fa-check {
     font-size: 10em;
   }
   p, h4, h3 {
